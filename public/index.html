@@ -1,0 +1,46 @@
+<html>
+
+<head>
+  <title>SmartCam Saves Lives</title>
+  <link rel="stylesheet" href="style.css"   />
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:900" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+
+</head>
+
+<body>
+  <div id="login_div" class="main-div">
+    <h3>SmartCam Login</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to SmartCam Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome SmartCam User</h3>
+    <p id="user_para">Welcome to SmartCam login. You are currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+
+  <script>
+    // Initialize Firebase
+    var config = {
+
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+
+
+<script>
+  if(window.closed){
+    firebase.auth().signout();
+  }
+</script>
+
+
+</body>
+
+</html>
